@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lunch Page</title>
+	<script src="https://kit.fontawesome.com/785810ca8d.js" crossorigin="anonymous"></script>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		.title_bubble {
+			background-color: rgb(224, 169, 109);
+			width: 300px;
+			padding: 50x;
+			border-radius: 20px;
+			text-align: center;
+			margin: 50px;
+		}
+		.bubble {
+			background-color: rgb(224, 169, 109);
+			padding: 20px;
+			border-radius: 20px;
+			text-align: center;
+			margin: 20px;
+		}
+        .bubble2 {
+        background-color: rgb(224, 169, 109);
+        padding: 20px;
+        border-radius: 20px;
+        margin: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        }
+        .bubble2:nth-child(odd) {
+          flex-direction: row-reverse;
+        }
+		.header {
+			font-size: 42px;
+			text-align: center;
+			margin-top: 50px;
+		}
+        p {
+            font-size: 28px;
+            margin: 0;
+        }
+        p2 {
+            font-size: 28px;
+            margin: 0;
+            max-width: 50%;
+        }
+        img {
+            max-width: 50%;
+            margin: 0 20px;
+            border-radius: 10px;
+        }
+		nav {
+			height: 100%;
+			width: 0;
+			position: fixed;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			background-color: rgb(221, 195, 165);
+			overflow-x: hidden;
+			transition: 0.5s;
+			padding-top: 60px;
+		}
+		nav a {
+			display: block;
+			color: rgb(32, 30, 32);
+			text-align: center;
+			padding: 15px;
+			text-decoration: none;
+			font-size: 1.2em;
+		}
+		nav a:hover {
+			background-color: rgb(224, 169, 109);
+			color: rgb(32, 30, 32);
+			box-shadow:0 0 10px rgba(0,0,0,0.5);
+		}
+		#menu-button {
+			display: inline-block;
+			position: fixed;
+			top: 10px;
+			left: 10px;
+			background-color: rgb(224, 169, 109);
+			color: rgb(32, 30, 32);
+			padding: 10px 20px;
+			font-size: 1.2em;
+			cursor: pointer;
+			z-index: 2;
+			border-radius: 10px;
+		}
+		#menu-button:hover {
+			background-color: rgb(221, 195, 165);
+			color: rgb(32, 30, 32);
+			box-shadow:0 0 10px rgba(0,0,0,0.5);
+		}
+		#menu-button:focus {
+			outline: none;
+		}
+		#menu-button .menu-icon {
+			display: inline-block;
+			margin-right: 10px;
+		}
+		#menu-button .menu-text {
+			display: inline-block;
+		}
+		#menu-button:focus + nav {
+			width: 250px;
+		}
+		body {
+			background-position: center;
+  			background-image: url("food.jpg");
+			background-attachment: fixed;
+		}
+		.btn {
+			border: none;
+			background-color: rgb(224, 169, 109);
+			padding: 20px;
+			border-radius: 10px;
+			cursor: pointer;
+			transition: background-color 0.1s ease-in-out;
+		}
+
+		.btn:hover {
+			background-color: rgb(221, 195, 165);
+			color: rgb(32, 30, 32);
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		}
+
+		.close-btn {
+			border: none;
+			background-color: rgb(221, 195, 165);
+			padding: 20px;
+			border-radius: 10px;
+			cursor: pointer;
+			transition: background-color 0.1s ease-in-out;
+		}
+
+		.close-btn:hover {
+			background-color: rgb(224, 169, 109);
+			color: rgb(32, 30, 32);
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		}
+		
+	</style>
+</head>
+<body>
+	<div style="width:350px; margin:0 auto;" class="title_bubble">
+	<div class="header">Lunch</div>
+	<button id="menu-button" aria-label="Open menu">
+		<span class="menu-icon">&#9776;</span>
+		<span class="menu-text">Menu</span>
+	</button>
+	<nav>
+		<a href="home_page.html">Home</a>  
+        <a href="breakfast.html">Breakfast</a> 
+        <a href="dinner.html">Dinner</a>  
+        <a href="snacks.html">Snacks</a> 
+        <a href="calorie_calculator.html">Calorie Counter</a>
+		<a href="sc-player.html">Music Player</a>
+		<a href="Journey.html">My journey</a>
+		<a href="https://www.instagram.com/hamish.jacked.alsop/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@hamish.jacked.alsop" target="_blank"><i class="fab fa-tiktok"></i></a>
+	</nav>
+	</div>
+	<script>
+		var menuButton = document.getElementById('menu-button');
+		var nav = document.querySelector('nav');
+		menuButton.addEventListener('click', function() {
+			nav.style.width = nav.style.width === '250px' ? '0' : '250px';
+			menuButton.setAttribute('aria-expanded', nav.style.width !== '0');
+		});
+	</script>
+    <div class="bubble">
+		<p>Lunnch is generally where I will have the highest calorie meal of the day as it allows me to be able to fuel up enough for my gym session in the evening while being enough in advance that i am not ethargic and too full to work out optimally.</p>
+		<p>Here is an example of a typical lunch for me.</p>
+    </div>
+	<div class="bubble2">
+
+		<button id="nut-but" class="btn" onclick="togglePopup()"><i class="fa-solid fa-circle-info fa-3x"></i></button>
+
+		<div id="popup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); width:300px; height:300px; background-color:rgb(221, 195, 165); border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.5); padding:20px; text-align:center; opacity:0; transition: opacity 0.5s ease-in-out;">
+			<h2>Nutritional Information</h2>
+			<p>Ramen:</p>
+			<p>Calories: 560</p>
+			<p>Protein: 10g</p>
+			<p>Fat: 18g</p>
+			<p>Carbs: 82g</p>
+			<button id="close" class="close-btn" onclick="togglePopup()">Close</button>
+		</div>
+
+		<script>
+		function togglePopup() {
+			var popup = document.getElementById("popup");
+			if (popup.style.opacity === "0") {
+				popup.style.display = "block";
+				setTimeout(function() {
+					popup.style.opacity = "1";
+				}, 50);
+			} else {
+				popup.style.opacity = "0";
+				setTimeout(function() {
+					popup.style.display = "none";
+				}, 500);
+			}
+		}
+		</script>
+
+        <p2>Ramen can be a good meal option for bodybuilders when used as a carrier for other nutrient-dense ingredients like beef and vegetables. While traditional ramen noodles are high in refined carbohydrates and low in protein, incorporating lean beef and veggies can make for a well-rounded meal. By adding beef and veggies to your ramen, you can turn it into a balanced and nutritious meal that supports your goals. My personl favourite is a spicey ramen.</p2>
+        <img src="ramen.jpg" alt="ramen">
+      </div>
+      <div class="bubble2">
+
+		<button id="nut-but2" class="btn" onclick="togglePopup2()"><i class="fa-solid fa-circle-info fa-3x"></i></button>
+
+		<div id="popup2" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); width:300px; height:300px; background-color:rgb(221, 195, 165); border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.5); padding:20px; text-align:center; opacity:0; transition: opacity 0.5s ease-in-out;">
+			<h2>Nutritional Information</h2>
+			<p>Beef:</p>
+			<p>Calories: 325</p>
+			<p>Protein: 54.7g</p>
+			<p>Fat: 10.5g</p>
+			<p>Carbs: 0g</p>
+			<button id="close" class="close-btn" onclick="togglePopup2()">Close</button>
+		</div>
+
+		<script>
+		function togglePopup2() {
+			var popup = document.getElementById("popup2");
+			if (popup.style.opacity === "0") {
+				popup.style.display = "block";
+				setTimeout(function() {
+					popup.style.opacity = "1";
+				}, 50);
+			} else {
+				popup.style.opacity = "0";
+				setTimeout(function() {
+					popup.style.display = "none";
+				}, 500);
+			}
+		}
+		</script>
+
+        <p2>Adding beef mince to a meal can be an excellent option for bodybuilders looking to build muscle. Beef is a rich source of high-quality protein, containing all the essential amino acids needed for muscle growth and repair. Additionally, beef is a good source of iron, zinc, and vitamin B12, which are important for maintaining overall health and energy levels during exercise. Incorporating beef mince into your meals can provide your body with the necessary nutrients to support muscle growth and recovery. Just be mindful of portion sizes and choose lean cuts of beef to keep the saturated fat content in check. I will usually have 250g with this meal.</p2>
+        <img src="mince.jpg" alt="mince">
+      </div>
+      <div class="bubble2">
+
+		<button id="nut-but3" class="btn" onclick="togglePopup3()"><i class="fa-solid fa-circle-info fa-3x"></i></button>
+
+		<div id="popup3" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); width:300px; height:300px; background-color:rgb(221, 195, 165); border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.5); padding:20px; text-align:center; opacity:0; transition: opacity 0.5s ease-in-out;">
+			<h2>Nutritional Information</h2>
+			<p>Wraps:</p>
+			<p>Calories: 712</p>
+			<p>Protein: 19.6g</p>
+			<p>Fat: 10.8g</p>
+			<p>Carbs: 131.2g</p>
+			<button id="close" class="close-btn" onclick="togglePopup3()">Close</button>
+		</div>
+
+		<script>
+		function togglePopup3() {
+			var popup = document.getElementById("popup3");
+			if (popup.style.opacity === "0") {
+				popup.style.display = "block";
+				setTimeout(function() {
+					popup.style.opacity = "1";
+				}, 50);
+			} else {
+				popup.style.opacity = "0";
+				setTimeout(function() {
+					popup.style.display = "none";
+				}, 500);
+			}
+		}
+		</script>
+
+        <p2>Wrapping any food inside a tortilla is an easy way to add extra calories to a meal. Tortillas are typically high in carbohydrates, providing a quick source of energy to fuel your workouts. Additionally, tortillas come in a variety of flavors and sizes, making them a versatile option for meal prep. By using tortillas as a carrier for nutrient-dense ingredients, you can create a well-rounded and delicious meal that supports your goals. I will usually have 4 with this meal.</p2>
+		<img src="wraps.jpg" alt="wraps">
+		
+		
+      </div>
+	  
+</body>
+</html>
