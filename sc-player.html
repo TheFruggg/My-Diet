@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Anabolic Tunes</title>
+	<script src="https://kit.fontawesome.com/785810ca8d.js" crossorigin="anonymous"></script>
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		.title_bubble {
+			background-color: rgb(224, 169, 109);
+			width: 300px;
+			padding: 50x;
+			border-radius: 20px;
+			text-align: center;
+			margin: 50px;
+		}
+		.bubble {
+			background-color: rgb(224, 169, 109);
+			padding: 20px;
+			border-radius: 20px;
+			text-align: center;
+			margin: 20px;
+		}
+		.bubble-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-top: 20px;
+		}
+		.bubble2 {
+		width: 30%;
+        background-color: rgb(224, 169, 109);
+        padding: 20px;
+        border-radius: 20px;
+        margin: 20px;
+        
+        align-items: center;
+        }
+		.header {
+			font-size: 42px;
+			text-align: center;
+			margin-top: 50px;
+		}
+		p {
+			font-size: 28px;
+		}
+		nav {
+			height: 100%;
+			width: 0;
+			position: fixed;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			background-color: rgb(221, 195, 165);
+			overflow-x: hidden;
+			transition: 0.5s;
+			padding-top: 60px;
+		}
+		nav a {
+			display: block;
+			color: rgb(32, 30, 32);
+			text-align: center;
+			padding: 15px;
+			text-decoration: none;
+			font-size: 1.2em;
+		}
+		nav a:hover {
+			background-color: rgb(224, 169, 109);
+			color: rgb(32, 30, 32);
+			box-shadow:0 0 10px rgba(0,0,0,0.5);
+		}
+		#menu-button {
+			display: inline-block;
+			position: fixed;
+			top: 10px;
+			left: 10px;
+			background-color: rgb(224, 169, 109);
+			color: rgb(32, 30, 32);
+			padding: 10px 20px;
+			font-size: 1.2em;
+			cursor: pointer;
+			z-index: 2;
+			border-radius: 10px;
+		}
+		#menu-button:hover {
+			background-color: rgb(221, 195, 165);
+			color: rgb(32, 30, 32);
+			box-shadow:0 0 10px rgba(0,0,0,0.5);
+		}
+		#menu-button:focus {
+			outline: none;
+		}
+		#menu-button .menu-icon {
+			display: inline-block;
+			margin-right: 10px;
+		}
+		#menu-button .menu-text {
+			display: inline-block;
+		}
+		#menu-button:focus + nav {
+			width: 250px;
+		}
+		body {
+			background-position: center;
+  			background-image: url("food.jpg");
+			background-attachment: fixed;
+		}
+		img{
+			width: 70%;
+			height: auto;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<div style="width:350px; margin:0 auto;" class="title_bubble">
+	<div class="header">Anabolic Tunes</div>
+	<button id="menu-button" aria-label="Open menu">
+		<span class="menu-icon">&#9776;</span>
+		<span class="menu-text">Menu</span>
+	</button>
+	<nav>
+        <a href="home_page.html">Home</a>
+		<a href="breakfast.html">Breakfast</a>  
+        <a href="lunch.html">Lunch</a> 
+        <a href="dinner.html">Dinner</a>  
+        <a href="snacks.html">Snacks</a> 
+        <a href="calorie_calculator.html">Calorie Calculator</a>
+		<a href="https://www.instagram.com/hamish.jacked.alsop/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@hamish.jacked.alsop" target="_blank"><i class="fab fa-tiktok"></i></a>
+	</nav>
+	</div>
+	<script>
+		var menuButton = document.getElementById('menu-button');
+		var nav = document.querySelector('nav');
+		menuButton.addEventListener('click', function() {
+			nav.style.width = nav.style.width === '250px' ? '0' : '250px';
+			menuButton.setAttribute('aria-expanded', nav.style.width !== '0');
+		});
+	</script>
+	<div class="bubble">
+		
+        <iframe width="100%" height="850" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1445316586&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/hamish-alsop" title="Hamish Alsop" target="_blank" style="color: #cccccc; text-decoration: none;">Hamish Alsop</a> · <a href="https://soundcloud.com/hamish-alsop/sets/we-go-jim" title="WE GO JIM" target="_blank" style="color: #cccccc; text-decoration: none;">WE GO JIM</a></div>
+	
+	</div>
+
+	
+			
+
+	
+</body>
+</html>
